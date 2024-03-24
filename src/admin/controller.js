@@ -36,18 +36,18 @@ const addAdmin = (req, res) => {
         acceptedat
     } = req.body;
 
-    // Check if email already exists
-    pool.query(queries.checkEmailExists, [email], (error, results) => {
+    // Check if cin already exists
+    pool.query(queries.checkCinExists, [cin], (error, results) => {
         if (error) {
-            console.error("Error checking email:", error);
+            console.error("Error checking cin:", error);
             return res.status(500).send("Internal Server Error");
         }
         
         if (results.rows.length) {
-            return res.status(400).send("Email already exists");
+            return res.status(400).send("cin already exists");
         }    
 
-        // Add admin if email doesn't exist
+        // Add admin if cin doesn't exist
         pool.query(queries.addAdmin, [cin, api, key, idsociety, activation, firstnamea, lastnamea, username, gendera, birthdatea, specialization, email, password, status, createdat, acceptedat], (error, results) => {
             if (error) {
                 console.error("Error adding admin:", error);
@@ -91,14 +91,14 @@ const archiveAdmin = (req, res) => {
    */
   const updateAdmin = (req,res)=>{
     const cin = parseInt(req.params.cin);
-    const {username} = req.body;
+    const {api, key, idsociety, activation, firstnamea, lastnamea, username, gendera, birthdatea, specialization, email, password, status, createdat, acceptedat} = req.body;
 
     pool.query(queries.getAdminById, [cin], (error, results) => {
         const noAdminFound =! results.rows.length;
         if (noAdminFound) {
             res.send("Admin does not exist in db");
         }
-        pool.query(queries.updateAdmin, [username , cin], (error, results) => {
+        pool.query(queries.updateAdmin, [api, key, idsociety, activation, firstnamea, lastnamea, username, gendera, birthdatea, specialization, email, password, status, createdat, acceptedat,cin], (error, results) => {
             if (error ) throw error;
             res.status(200).send("Admin updated successfully");
         });
