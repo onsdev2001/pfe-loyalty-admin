@@ -1,4 +1,3 @@
-// queries.js
 
 const pool = require('../../database');
 
@@ -11,7 +10,7 @@ async function addCompany(namec, codets ) {
     const result = await client.query(insertQuery, values);
     
 
-// Create a schema for the new company
+// Create a automate schema for the new company
 const createSchemaQuery = `CREATE SCHEMA IF NOT EXISTS ${namec.toLowerCase()}`;
 await client.query(createSchemaQuery);
 

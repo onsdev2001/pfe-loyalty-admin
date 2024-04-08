@@ -1,4 +1,4 @@
-//crate express server
+
 const express = require("express");
 const adminRoutes = require("./src/admin/routes");
 const companyRoutes = require("./src/TS/routes");
