@@ -51,7 +51,7 @@ This module provides **REST API endpoints** to manage administrator accounts.
 ---
 
 ## 📘 Full Project Documentation
-📄 [RAPPORT_PFE.pdf](./RAPPORT_PFE.pdf) — Includes **full feature list**, **UML diagrams**, and **implementation details**.
+📄 [RAPPORT PFE.pdf](./RAPPORT%20PFE.pdf) — Includes **full feature list**, **UML diagrams**, and **implementation details**.
 
 
 ---
