@@ -59,4 +59,8 @@ This module provides **REST API endpoints** to manage administrator accounts.
 ## 📜 License
 This project is part of my academic work and is shared **for educational purposes**,it has since been deployed and used  by ProxiClic (BI DATA ) in France.
 
+This repository contains only a **small part** of a larger proprietary project.  
+The **full project** is confidential and not shared here.
+
+
 ---
